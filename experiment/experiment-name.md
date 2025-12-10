@@ -1,1 +1,1 @@
-## Experiment name
+## To apply Linear Regression to predict the relationship between dependent and independent variables
