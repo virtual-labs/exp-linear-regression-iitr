@@ -1,1 +1,1 @@
-### Aim of the experiment
+#### To apply linear regression and predict the relationship between a dependent variable and one or more independent variables.

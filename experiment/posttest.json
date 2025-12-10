@@ -1,39 +1,52 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
+[
+  {
+    "question": "If the slope coefficient (b₁) in a simple linear regression model is positive, what does it suggest about the relationship between variables X and Y?",
+    "answers": {
+      "a": "Positive correlation",
+      "b": "Negative correlation",
+      "c": "No correlation",
+      "d": "Perfect correlation"
     },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+    "correctAnswer": "a"
+  },
+  {
+    "question": "Which statement about simple and multiple linear regression is TRUE?",
+    "answers": {
+      "a": "Simple linear regression is used for modeling relationships between multiple independent variables and a dependent variable.",
+      "b": "Multiple linear regression requires datasets to be smaller than those needed for simple linear regression.",
+      "c": "Simple linear regression models the relationship between a single independent variable and a dependent variable.",
+      "d": "Multiple linear regression is a univariate technique that only predicts a single independent variable."
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "In which category does linear regression belong to?",
+    "answers": {
+      "a": "Supervised learning",
+      "b": "Unsupervised learning",
+      "c": "Both supervised and unsupervised learning",
+      "d": "Neither supervised nor unsupervised learning"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "Linear regression is mainly used for:",
+    "answers": {
+      "a": "Classification",
+      "b": "Clustering",
+      "c": "Prediction",
+      "d": "Reinforcement Learning"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "question": "Which of the following scenarios is more suitable for applying linear regression?",
+    "answers": {
+      "a": "Predicting whether an email is spam or not",
+      "b": "Classifying images of cats and dogs",
+      "c": "Estimating the sales of a company based on advertising spend",
+      "d": "Segmenting customers into different loyalty groups"
+    },
+    "correctAnswer": "c"
+  }
+]
