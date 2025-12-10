@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+
+   </head>
+
+<body>
+    <div class="container" id="box">
+        <!-- Instructions -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2 style="margin-right: 90%;">Instructions</h2>
+                </div>
+                <div class="modal-body">
+
+                      <ol type="1" style="font-size: 20px; text-align: justify;">      
+                        <li> Click on <strong> CREATE</strong> to perform the experiment.</li>
+                        <li> Enter the values for <strong>X</strong>(Age) and <strong>Y</strong>(Glucose-level) in the <b>ATTRIBUTES</b> section and click on the <strong>ADD</strong> button to add values to the table.</li>
+                        <li> Repeat step 2 until there are 10 rows in the table.</li>
+                        <li> Click on the <strong>NEXT</strong> button to provide the data for testing.</li>
+                        <li> Now, enter a value for <strong>X</strong> (Age) in the <b>ATTRIBUTE</b> section, and then click on the <strong>NEXT</strong> button.</li>
+                        <li> Complete the observation table by clicking on the buttons labeled <strong>XY</strong>, <strong>X²</strong> and <strong>Σ</strong> in the specified order.</li>
+                        <li> Enter  values for <strong>b₀</strong> equation, then click on the <strong>SUBMIT</strong> button. </li>
+                        <li> Enter  values for  <strong>b₁</strong> equation, then click on the <strong>SUBMIT</strong> button.</li>
+                        <li> Enter the  values of  <strong> b₀ & b₁</strong> into the <strong>y</strong> equation, and then click on the <strong>SUBMIT</strong> button.</li>   
+                        <li> Finally, click the <strong>PLOT</strong> button to plot the graph.</li>
+                        <p>
+                          <b style="color:#FF6600;">Note:</b> b₀, b₁ & y values are rounded to two decimal places.
+                        </p>
+                      </ol>  
+                      
+
+                </div>
+                <div class="modal-footer">
+                    <br>
+                </div>
+            </div>
+        </div>
+
+       
+       <!-- header -->
+       <header class="header">
+        <div class="tabs">
+            <!-- tabs -->
+            <div id="tab-1"  style="color: black;border-top-left-radius: 10px;background-color:#e0e0e0;cursor: not-allowed;">
+              <div class="tab-create tab-1-invert" style="border-top-left-radius: 10px;cursor: not-allowed;">
+                  CREATE
+              </div>
+              <img id="createimg" src="images/create1.png" style="margin-top: 3px; margin-right: 10px; height: 85%;cursor: not-allowed;" alt="">
+
+          </div>
+            <div id="tab-2" class="tab-1-disInvert" style="display: flex; border-right: 2px solid black;">
+              <div class="tab-create tab-1-disInvert">
+                COMPUTE
+              </div>
+                <img id="calcimg" src="images/calculator.png" class="disableCompute"
+                    style="margin-top: 3px; margin-right: 10px; height: 85%;" id="calImg" alt="">
+            </div>
+            <div id="tab-3" class="tab-2-disInvert" style="display: flex; border-right: 2px solid black;">
+                <div class="tab-create tab-2-disInvert">
+                 ANALYZE
+                </div>
+                <img id="anaimg" src="images/analysis_icon.png" 
+                    style="margin-top: 3px; margin-right: 10px; height: 85%;" id="calImg" alt="">
+            </div>
+        
+            </div>
+            <div class="instruction-container">
+                <a class="header-text" id="myBtn" style="padding-top: 5px" href="#">INSTRUCTIONS</a>
+            </div>
+        </header>
+
+        <div class="sec-con-container" id="trainingSection">
+            <div class="sec-con-column" id="non-table-section">
+                <!-- Data controls -->
+                <div class="training-left-side-container">
+                    <div class="sub-div-control" id="training-control">
+                        <header class="header-box"><strong>ATTRIBUTES</strong></header>
+                        <div class="control-panel">
+                            <div class="Data-set-x-value-input-container">
+                                <label class="control-input-heading"><strong>X-VALUE:</strong></label>
+                                <input type="text" class="input-control" id="X" placeholder="Age (yrs)"  oninput="limitDecimals(event)" min="0" title="range:(1,100)"
+                                 >
+                            </div>
+                            <div class="Data-set-x-value-input-container">
+                                <label class="control-input-heading"><strong>Y-VALUE:</strong></label>
+                                <input type="text"  class="input-control" id="Y" placeholder="Glucose-level(mg/dL)"  oninput="limitDecimals(event)" title="range:(60,130)" >
+                                
+                            </div>
+                        </div>
+                    </div>
+                   
+                          <!-- x value -control -->
+                    <div class="sub-div-control" id="cluster-control">
+                      <header class="header-box"><strong>ATTRIBUTE</strong></header>
+                      <div class="cluster-control-panel">
+                        <div class="Data-set-age-value-input-container">
+                          <label class="control-input-heading"><strong>X-VALUE:</strong></label>
+                          <input type="text" class="input-control" id="age" placeholder="Age (yrs)"  min="1" max="100"  oninput="limitDecimals(event)" title="range:(1,100)"    >
+                        </div>
+                                    
+                      </div>
+                    </div>
+                                        
+                                    
+                    <!-- data button section -->
+                    <div class="control-panel-button-container" id="data-button-container">
+                        <input class="button" type="button" id="add-button" onclick="addDataPoint()" value="ADD"
+                            style="margin-left: 3px;" />
+                        <input class="button" type="button" id="resets" value="RESET" disabled onclick="window.location.reload()"
+                            style="margin-left: 3px;" />
+                        
+                        <button id="next-button" class="button">NEXT</button>
+                    </div>
+     
+                   <!--Train data button section -->
+                    <div class="cluster-panel-button-container" id="cluster-button-container">
+                        <input class="button" type="button" id="cluster-submit-button" value="ADD" style="margin-left: 3px;" onclick="submitCluster()" />
+                        <input class="button" type="button" id="resetbut" value="RESET" onclick="resetEleventhRow()" disabled style="margin-left: 3px;" />
+                        <button id="compute-b-next-button" class="button" onclick="tabChange()">NEXT</button>
+                    </div>                 
+                </div>
+
+                <!-- graph -->
+                <div class="sub-div-plot" id="graphId">
+                    <header class="header-box"><strong>GRAPH</strong></header>
+                    <div id="chart-container">
+                        <div id="chart"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+<!-- table -->
+<div class="sec-con-table" id="tableId"  style="width: 500px;">
+    <div class="sub-div-table" id="subtableId">
+        <header class="header-box"><strong>DATASET</strong></header>
+        <div id="tablesContainer">
+            <table id="data-table">
+             <!---    <thead> -->
+                <tr>
+                    <th><strong>S. No.</strong></th>
+                    <th><strong>X</strong></th>
+                    <th><strong>Y</strong></th>
+                    <th id="deleteButton"><strong>DELETE</strong></th>
+                </tr>
+              
+                
+            </table> 
+        </div>
+    </div>
+</div>
+<div class="sec-con-inter" id="interDiv" style="display:none">
+    <div class="sub-div-inter" id="interId">
+        <header class="header-box"><strong>INTERPRETATION</strong></header>
+        <div id="listContainer"></div>
+    </div>
+   
+</div>
+</div>
+ 
+<div class="sec-con-table-new" id="newTableId" style="width: 525px;"></div>
+
+
+
+        <!-- compute section -->
+        <div class="compute-sec-con-container" id="ComputeSection">
+            
+            <div class="calculation-container" id="calculationcontainer">
+                <header class="calculation-header"><strong>CALCULATION</strong></header>
+                <div class="tableSection" id="compute-table-section">
+
+                  <div id="b0-equation"  style="margin-top: 40px;  margin-left: 60px;"  >
+                    
+                    <span style="position:relative;top: 26px; margin-left:-15px;font-size:24px">b<sub>0</sub> = </span>
+                    (
+                    <input type="number" id="input-summation-y" placeholder="ΣY" style="width: 45px; font-size: 12px;">
+                    )
+                    (
+                    <input type="number" id="input-summation-x21" placeholder="ΣX²" style="width: 45px; font-size: 12px;">
+                    )
+                    -
+                    (
+                    <input type="number" id="input-summation-x" placeholder="ΣX" style="width: 45px; font-size: 12px;">
+                    )
+                    (
+                    <input type="number" id="input-summation-xy" placeholder="ΣXY" style="width: 45px; font-size: 12px;">
+                    )
+                    <hr class="custom-hr">
+                    10
+                    (
+                    <input type="number" id="input-summation-x22" placeholder="ΣX²" style="width: 45px; font-size: 12px;">
+                    )
+                     -
+                    (
+                    <input type="number" id="input-summation-xp" placeholder="ΣX" style="width: 45px; font-size: 12px;">
+                    )
+                    ² </hr>
+                  </div>
+
+                  
+                  <div id="b1-equation"    style="  display: none;  
+                    margin-top: 30px;  margin-left: 68px;">
+                    <span style="position:relative;top: 26px; margin-left:-15px;font-size:24px">b<sub>1</sub> = </span>
+                    ( 10 * 
+                    <input type="number" id="b1-summation-xy" placeholder="ΣXY" style="width: 45px; font-size: 12px;">
+                    )
+                    -
+                    (
+                    <input type="number" id="b1-summation-x" placeholder="ΣX" style="width: 45px; font-size: 12px;">
+                    )
+                    (
+                    <input type="number" id="b1-summation-y" placeholder="ΣY" style="width: 45px; font-size: 12px;">
+                    )
+                    <hr class="custom-hr11">
+                    10
+                    (
+                    <input type="number" id="b1-summation-x22" placeholder="ΣX²" style="width: 45px; font-size: 12px;">
+                    )
+                    -
+                    (
+                    <input type="number" id="b1-summation-xp" placeholder="ΣX" style="width: 45px; font-size: 12px;">
+                    )
+                    ²</hr>
+                  </div>
+                  
+
+
+                  <div id="linear-equation"    style="display: none;  margin-top: 24px;  margin-left: 21px; " >
+                  Glucose-level (y) = 
+                    (
+                    <input type="number" id="b0-equation-1" placeholder="b0" style="width:40px; font-size: 12px; background-color: aliceblue;">
+                    )  
+                    +
+                    (
+                    <input type="number" id="b1-equation-1" placeholder="b1" style="width: 40px; font-size: 12px;background-color: aliceblue;">
+                    )
+                    *
+                 
+
+                    (
+                     
+                   <span id="xValueDisplay"></span>
+
+                  
+                    )
+                  </div>
+                  
+
+
+                </div>
+              </div>
+
+
+
+            <div class="formulae-container" id="formulaecontainer">
+                <header class="formulae-header"><strong>FORMULAE</strong></header>
+                <div class="formulae-content">
+
+                  <p style="align-items:center">
+                 
+                      \( y = b_0 + b_1x \)
+                 
+                  </p>
+                  <b style="color:#FF6600">Where,</b>
+                  
+                    <p style="margin-top: -10px;"><span id="x-test-data"> x = </span></p>
+
+                    <p style="margin-top: -8px;"><span class="math-equation"  >b<sub>0</sub> = \(\frac{(\sum Y)(\sum X^2) - (\sum X)(\sum XY)}{10(\sum X^2) - (\sum X)^2}\)</span></p>
+                
+                    <p style="margin-top: -6px;"><span class="math-equation" >b<sub>1</sub>= \(\frac{10(\sum XY) - (\sum X)(\sum Y)}{10(\sum X^2) - (\sum X)^2}\)</span></p>
+              
+                </div>
+              </div>
+          
+              <div class="button-container"  id="compute-button-container">
+
+                <input class="button submit-button" type="button" id="compute-submit-button" onclick="submitData()" value="SUBMIT" disabled />
+
+              <input class="button submit-button" type="button" id="compute-submit-button2" onclick="submitData2()" value="SUBMIT" style="display:none" />
+              <input class="button submit-button" type="button" id="compute-submit-button3" onclick="submitData3()" value="SUBMIT" style="display:none" />
+                <input class="button reset-button" type="button" id="compute-reset-button" onclick="previousphase()" title="Resets the value in the input box" value="RESET"  disabled   />  
+              
+                <input class="button next-button" type="button" id="compute-next-button" onclick="tabChangeIntoAnalysis(); goToAnalysisPhase();" value="NEXT" disabled />
+
+                       
+            </div>
+              
+            <div class="additional-buttons" id="additionalbuttons">
+              <button class="button xy-button" id="compute-xy-button" disabled onclick="computeXY()">XY</button>
+              <button class="button x2-button" id="compute-x2-button" disabled onclick="computeX2()">X²</button>
+              <button class="button summation-button" id="compute-summation-button" disabled onclick="computeSummation()">Σ</button>
+
+            
+              </div>
+            
+              
+             
+
+
+ <!-- analyse section -->
+ 
+ <div class="compute-sec-con-container hidden" id="analyseSection">
+
+  <div class="flux-box">
+     
+
+      </div>
+      <div class="sec-con-column-analysis">
+
+          <div class="sub-div-plot-analysis" style="margin-top:-113%;  margin-left:86%;">
+              <header class="header-box"><strong>GRAPH</strong></header>
+
+              <div id="graph"></div>
+
+          </div>
+          <div class="analysis-button-container" style="margin-left:86%; margin-top:-1%;">
+              <button class="button" id="plot-analysis"  onclick="drawChart1()">PLOT</button>
+              <button class="button" id="print" onclick="printPage()" disabled>PRINT</button>
+          </div>
+      </div>
+
+  </div>
+<div>
+
+</div>
+
+            
+</div>              
+       
+
+        <!-- footer -->
+        <footer class="footer">
+            <span class="footer-text">© 2025 Virtual Labs, IIT Roorkee</span>
+        </footer>
+        <script src="js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script>
+
+Swal.fire({
+            icon: 'info',
+            title:'Create the dataset (trained)!!',
+            html: 'Choose a value for each attribute using the dropdown menu,<br> and then click the <b style="color:#FF6600">ADD</b> button.',
+            customClass: {
+                container: "position-absolute",
+                popup: "swal2-popup",
+                title: "swal2-title",
+                content: "swal2-content",
+            },
+            target: myContainer
+        });
+        
+            document.querySelector('.container').style.backgroundImage = 'none';     
+          </script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
