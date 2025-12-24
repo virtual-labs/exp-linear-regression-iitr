@@ -9,13 +9,13 @@ Linear regression is a statistical modeling technique used to analyze the relati
 The main objective is to identify the best-fitting line, which is achieved by minimizing the differences between observed data points and their predicted values on this line. The characteristics of this line, defined by its slope and y-intercept, indicate the direction and starting point of the relationship, respectively.
 
 <center>  
-<img style="mix-blend-mode: darken;" src="images\graph.png" alt="Representing the relationship between the variables">
+<img style="mix-blend-mode: darken;" src="images\graph.png" width="350px" alt="Representing the relationship between the variables">
 <figcaption><strong>Fig. 1 Representing the relationship between the variables</strong></figcaption>
 </center>
 <br><br>
 Mathematically, we can represent a linear regression as:
 
-### <center>y=b<sub>0</sub>+b<sub>1</sub>x</center>
+<center>y=b<sub>0</sub>+b<sub>1</sub>x</center>
 where:<br>
 
 * <b>y :</b> is the dependent variable or the variable we want to predict,
@@ -124,12 +124,11 @@ where:<br>
 
 * <b>n : </b> is the total no. of observations.
 
-### **Example:**
+#### **Example:**
 Let's consider a dataset that shows the relationship between the number of Age (x) and the corresponding Fever level (y) of 6 students. We want to build a linear regression model to predict the Fever level based on the age.
 
 <p><b>Step 1:</b> Calculate xy, x² and Σ :
-<center>
-<table>
+<table align="center">
 <thead>
 <tr>
     <th>SUBJECT</th>
@@ -199,7 +198,6 @@ Let's consider a dataset that shows the relationship between the number of Age (
 </tr>
 </tbody>
 </table>
-</center>
 
 <p><b>Step 2:</b> Calculate b<sub>0</sub> and b<sub>1</sub>:
                       
@@ -459,7 +457,7 @@ Given data:
 </math>
 <br>
 
-### <p><b>Output :</b>
+#### <p><b>Output :</b>
 <p>The linear regression equation for the given data is:
 
 <p> <math xmlns="http://www.w3.org/1998/Math/MathML" style="font-size: 20px;">
@@ -485,7 +483,7 @@ Given data:
     </math>
 <br><br>
 
-### **Applications of Linear Regression:**
+#### **Applications of Linear Regression:**
 * <b>Economics :</b> Predicting consumer demand, analyzing price elasticity, and estimating market trends.
 * <b>Finance :</b> Modeling stock returns, predicting asset prices, and assessing risk factors.
 * <b>Healthcare :</b> Analyzing the relationship between medical variables, predicting patient outcomes.
@@ -493,14 +491,14 @@ Given data:
 * <b>Marketing :</b> Determining the effectiveness of advertising campaigns, forecasting sales.
 
 
-### **Advantages of Linear Regression:**
+#### **Advantages of Linear Regression:**
 * Simple and easy to understand.
 * Provides insights into the relationship between variables.
 * Can be used for both prediction and inference.
 * Computationally efficient for large datasets.
 * Provides measures of uncertainty and statistical significance.
 
-### **Disadvantages of Linear Regression:**
+#### **Disadvantages of Linear Regression:**
 * Assumes a linear relationship between variables, which may not always hold.
 * Sensitive to outliers and influential observations.
 * Cannot capture complex nonlinear relationships between variables.
