@@ -10,4 +10,5 @@
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | Dr. Bhuvnesh Rathore | bhuvnesh.rathore@jietjodhpur.ac.in | JIET |  Professor |
 | 2 | Dr. Rajeev Kumar | rajeev.kumar@ee.iitr.ac.in	 | PEC Chandigarh | Assistant Professor |
+<!-- | 3	| Ms. Pragya Daksh | prgdaksh@gmail.com	| IIT Roorkee	| Project Associate | -->
  
