@@ -10,7 +10,7 @@ The main objective is to identify the best-fitting line, which is achieved by mi
 
 <center>  
 <img style="mix-blend-mode: darken;" src="images\graph.png" width="350px" alt="Representing the relationship between the variables">
-<figcaption><strong>Fig. 1 Representing the relationship between the variables</strong></figcaption>
+<figcaption><strong> Fig. 1 Representing the relationship between the variables </strong></figcaption>
 </center>
 <br><br>
 Mathematically, we can represent a linear regression as:
