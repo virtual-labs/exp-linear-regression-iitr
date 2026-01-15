@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+      
+</head>
+
+<body>
+
+    <div class="container" id="box">
+        <!-- Instructions -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2 style="text-align: left;">Instructions</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                    <ol type="1" style="font-size: 20px; text-align: left;">
+                         
+                        <li> Click on <strong> CREATE</strong> to perform the experiment.</li>
+                        <li> Enter the values for <strong>X</strong>(Age) and <strong>Y</strong>(Glucose-level) in the <b>Training Data Set</b> and click on the <strong>ADD</strong> button to add values to the table.</li>
+                        <li> Repeat step 2 until there are 10 rows in the table.</li>
+                        <li> Click on the <strong>NEXT</strong> button to proceed further.</li>
+                        <li> Enter a value  for <strong>X</strong>(Age) in <b>Testing Data Set</b> and then click on the <strong>NEXT</strong> button.</li>
+                        <li> Complete the observation table by clicking on the buttons labeled <strong>XY</strong>, <strong>X²</strong> and <strong>Σ</strong> in the specified order.</li>
+                        <li> Enter  values for <strong> b<sub>0</sub></strong> equation, then click on the <strong>SUBMIT</strong> button. </li>
+                        <li> Enter  values for  <strong>  b<sub>1</sub></strong> equation, then click on the <strong>SUBMIT</strong> button.</li>
+                        <li> Enter the  values of  <strong> b<sub>0</sub></strong> and  <strong> b<sub>1</sub></strong> into the <strong>y</strong> equation, and then click on the <strong>SUBMIT</strong> button.</li>   
+                        <li> Finally, click the <strong>PLOT</strong> button to plot the graph.</li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!-- header -->
+        <header class="header">
+            <div class="tabs">
+
+                <!-- tabs -->
+                <div id="tab-1" style="display: flex; border-right: 2px solid black;  " >
+                    <div class="tab-create">
+                        <a href="create.html" class="tab-text" style= "color:white; font-weight: bold;"> CREATE</a>
+                    </div>
+                 <a href="create.html" style="margin-top: 3px; height: 100%">
+                      <img src="images/create.png" style="margin-top: 3px; margin-right: 10px; height: 85%" alt="" onclick="">
+                 </a>
+                       
+                </div>
+
+                <!--tab2-->
+                <div id="tab-2" style="display: flex; border-right: 2px solid black; color: white;cursor:not-allowed;">
+                    <div class="tab-create" style="cursor:not-allowed;">
+
+                       COMPUTE
+                    </div>
+                    <img src="images/calculator.png"  
+                        style="margin-top: 3px; margin-right: 10px; height: 85%;cursor:not-allowed;" alt="">
+                </div>
+
+                <!--tab3-->
+                <div id="tab-3" class="tab-2-disInvert" style="display: flex; border-right: 2px solid black;">
+                    <div class="tab-create tab-2-disInvert" style="cursor:not-allowed;">
+
+                      ANALYZE
+                    </div>
+                    <img src="images/analysis_icon.png"  
+                        style="margin-top: 3px; margin-right: 10px; height: 85%;" id="calImg" alt="">
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="instruction-container">
+                <a class="header-text" id="myBtn" style="padding-top: 5px" href="#">INSTRUCTIONS</a>
+            </div>
+        </header>
+
+
+        <div style="width:80%;margin-top: 2.3in; margin-left: 1in;">
+            <center>
+                <p style="color:white;font-size: 24px;text-align: justify;">
+                     To understand the working of simple linear regression, let's take a simple example of a 
+                     regression equation to predict the glucose level(dependent variable) based on age(independent variable). To begin, click on the <b style="color:#FF6600;">CREATE</b> tab.
+                 </p>
+                 
+            </center>
+            
+        </div>
+
+        <!-- footer -->
+        <footer class="footer">
+            <span class="footer-text">© 2025 Virtual Labs, IIT Roorkee</span>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+    <script>
+     
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var modalBtn = document.getElementById("myBtn");
+        // var modalBtn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        modalBtn.addEventListener("click", function () {
+            modal.style.display = "block";
+        });
+
+        // When the user clicks on <span> (x), close the modal
+        closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.addEventListener("click", function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+
+
+        const myContainer = document.getElementById('box');
+     
+
+
+ 
+</script>
+
+  
+<script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+
+</html>

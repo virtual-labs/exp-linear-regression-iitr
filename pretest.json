@@ -1,0 +1,52 @@
+[
+  {
+    "question": "What is the main goal of linear regression?",
+    "answers": {
+      "a": "Minimize the sum of squared residuals",
+      "b": "Maximize the coefficient of determination",
+      "c": "Find the p-value",
+      "d": "None of the above"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "question": "Which regression model involves multiple independent variables?",
+    "answers": {
+      "a": "Simple linear regression",
+      "b": "Multiple linear regression",
+      "c": "Logistic regression",
+      "d": "Polynomial regression"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "What does the slope of the linear regression line represent?",
+    "answers": {
+      "a": "Intercept",
+      "b": "Residual",
+      "c": "Coefficient of determination",
+      "d": "Change in the dependent variable for a unit change in the independent variable"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "question": "What is the formula for simple linear regression?",
+    "answers": {
+      "a": "y = b₀",
+      "b": "y = b₀ + b₁ * x",
+      "c": "y = eˣ",
+      "d": "y = ax² + bx + c"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "question": "How is the best-fitting line determined in linear regression?",
+    "answers": {
+      "a": "Minimize the sum of squared residuals",
+      "b": "Maximize the coefficient of determination",
+      "c": "Find the p-value",
+      "d": "None of the above"
+    },
+    "correctAnswer": "a"
+  }
+]
