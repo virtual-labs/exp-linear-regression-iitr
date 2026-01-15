@@ -1,8 +1,24 @@
-### **Introduction**
+#### **Introduction**
 
 Linear regression is a statistical modeling technique used to analyze the relationship between a dependent variable and one or more independent variables. It assumes a linear relationship between these variables and aims to find the best-fitting line that accurately represents the data. This method is fundamental in data analysis and predictive modeling due to its straightforward approach to modeling relationships. Linear regression operates under the assumption that changes in the dependent variable are proportional to changes in the independent variable(s).
 
-### **Some common types of Linear Regression**
+#### **Classification and Regression**
+Classification predictive modeling problems are different from regression predictive modeling problems.
+* Classification is the task of predicting a discrete class label.
+* Regression is the task of predicting a continuous quantity.<br>
+
+There is some overlap between the algorithms for classification and regression; for example:
+* A classification algorithm may predict a continuous value, but the continuous value is in the form of a probability for a class label.
+* A regression algorithm may predict a discrete value, but the discrete value in the form of an integer quantity.<br>
+
+Some algorithms can be used for both classification and regression with small modifications, such as decision trees and artificial neural networks. Some algorithms cannot, or cannot easily be used for both problem types, such as linear regression for regression predictive modeling and logistic regression for classification predictive modeling.<br>
+
+Importantly, the way that we evaluate classification and regression predictions varies and does not overlap, for example:
+* Classification predictions can be evaluated using accuracy, whereas regression predictions cannot.
+* Regression predictions can be evaluated using root mean squared error, whereas classification predictions cannot.
+
+
+#### **Some common types of Linear Regression**
 * <b>Simple Linear Regression :</b> Involves a single independent variable predicting a dependent variable.
 * <b>Multiple Linear regression :</b> Involves multiple independent variables predicting a dependent variable.
 
@@ -10,7 +26,7 @@ The main objective is to identify the best-fitting line, which is achieved by mi
 
 <center>  
 <img style="mix-blend-mode: darken;" src="images\graph.png" width="350px" alt="Representing the relationship between the variables">
-<figcaption><strong> Fig. 1 Representing the relationship between the variables </strong></figcaption>
+<figcaption><strong>Fig. 1 Representing the relationship between the variables</strong></figcaption>
 </center>
 <br><br>
 Mathematically, we can represent a linear regression as:
@@ -128,9 +144,14 @@ where:<br>
 Let's consider a dataset that shows the relationship between the number of Age (x) and the corresponding Fever level (y) of 6 students. We want to build a linear regression model to predict the Fever level based on the age.
 
 <p><b>Step 1:</b> Calculate xy, x² and Σ :
-<table align="center">
+
+<center>  
+<img style="mix-blend-mode: darken;" src="images\Ex-3.1.jpg" alt="Training Dataset T">
+</center><br>
+
+<!-- <table align="center">
 <thead>
-<tr>
+<tr style="background-color:#7fc3e1;" >
     <th>SUBJECT</th>
     <th>x</th>
     <th>y</th>
@@ -197,7 +218,7 @@ Let's consider a dataset that shows the relationship between the number of Age (
 
 </tr>
 </tbody>
-</table>
+</table> -->
 
 <p><b>Step 2:</b> Calculate b<sub>0</sub> and b<sub>1</sub>:
                       

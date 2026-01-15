@@ -7,5 +7,8 @@
 4. M. H. Kutner, C. J. Nachtsheim, J. Neter, and W. Li, <i>"Applied Linear Statistical Models,</i>" McGraw-Hill, 2004.
 5. J. Fox, <i>"Applied Regression Analysis and Generalized Linear Models,"</i> Sage, 2015.
 6. A. Gelman and J. Hill, <i>"Data Analysis Using Regression and Multilevel/Hierarchical Models,"</i> Cambridge University Press, 2007.
+7. Difference Between Classification and Regression in Machine Learning
+By Jason Brownlee on May 22, 2019 in Start Machine Learning
+
                 
 </div>
